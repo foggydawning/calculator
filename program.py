@@ -151,6 +151,13 @@ def call (numb_1=0.0):
             else:
                 numb_1= float (factorial (float(operation_split[0])))
 
+        #вызов процента
+        elif operation_split[0] == "%" or operation_split[1] == "%":
+            if operation_split[0] == "%":
+                numb_1= float (persent (numb_1))
+            else:
+                numb_1= float (persent (float(operation_split[0])))
+
         numb_1=rounding (numb_1)
         print(numb_1)
 
