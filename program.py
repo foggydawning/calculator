@@ -86,7 +86,7 @@ def sqrt_n(numb_1, numb_2):
 
 # округление числа
 def rounding (result):
-    if result.is_integer()==Treue:
+    if result.is_integer()==True:
         return int(result)
     return round(result, 10)
 
@@ -106,23 +106,54 @@ def call (numb_1=0):
         #вызов сложения
         if operation_split[0] == "+" or operation_split[1] == "+": # узнается, какую операцию хотел произвести пользователь
             if operation_split[0] == "+":  # если пользователь ввел строку operation по формуле + numb_2 , то вызывается функция от имеющегося в памяти значения numb_1 (по умолчанию numb_1==0 ) и введенного numb_2
-                numb_1= addition (numb_1, int(operation_split[1]))
-                print(numb_1)
+                numb_1= addition (numb_1, float(operation_split[1]))
+
 
             else:
-                numb_1= addition (int(operation_split[0]), int(operation_split[2])) # иначе, вызывается функция от введенных numb_1 и numb_2
-                print(numb_1)
+                numb_1= addition (float(operation_split[0]), float(operation_split[2])) # иначе, вызывается функция от введенных numb_1 и numb_2
+
 
 
         #вызов вычитания
         elif operation_split[0] == "-" or operation_split[1] == "-":
             if operation_split[0] == "-":
-                numb_1= subtraction (numb_1, int(operation_split[1]))
-                print(numb_1)
+                numb_1= subtraction (numb_1, float(operation_split[1]))
+
 
             else:
-                numb_1= subtraction (int(operation_split[0]), int(operation_split[2]))
-                print(numb_1)
+                numb_1= subtraction (float(operation_split[0]), float(operation_split[2]))
+
+
+        #вызов вычитания
+        elif operation_split[0] == "-" or operation_split[1] == "-":
+            if operation_split[0] == "-":
+                numb_1= subtraction (numb_1, float(operation_split[1]))
+
+            else:
+                numb_1= subtraction (float(operation_split[0]), float(operation_split[2]))
+
+
+        #вызов умножения
+        elif operation_split[0] == "*" or operation_split[1] == "*":
+            if operation_split[0] == "*":
+                numb_1= multiplication (numb_1, float(operation_split[1]))
+
+
+            else:
+                numb_1= multiplication (float(operation_split[0]), float(operation_split[2]))
+
+
+        #вызов деления
+        elif operation_split[0] == "/" or operation_split[1] == "/":
+            if operation_split[0] == "/":
+                numb_1= division (numb_1, float(operation_split[1]))
+
+
+            else:
+                numb_1= division (float(operation_split[0]), float(operation_split[2]))
+
+        numb_1=rounding (numb_1)
+        print(numb_1)
 
 
 
