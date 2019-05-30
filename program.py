@@ -101,6 +101,9 @@ def call (numb_1=0.0):
             print(numb_1)
             continue
 
+        if operation == "change_sign": # смена знака числа
+            numb_1*=-1.0
+
         operation_split = operation.split() # создается новый массив, который был получен путём разделения строки operation через пробел
 
         if len(operation_split)==1:
