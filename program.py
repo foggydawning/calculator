@@ -92,8 +92,8 @@ def rounding (result):
 
 # вызов расчетных шункций
 def call (numb_1=0):
-    while True:
-                # для выполнения бесконечного количества раз
+    while True: # для выполнения бесконечного количества раз
+
         operation = input()   # пользователь вводит операцию по формуле (numb_1 + numb_2) или (+ numb_2); разделение пробелом обязательно
 
         if operation == "clear": # если была нажата кнопка очистить, то возвращаемся в самое начало, а начальное значение становится равным нулю
@@ -103,10 +103,27 @@ def call (numb_1=0):
 
         operation_split = operation.split() # создается новый массив, который был получен путём разделения строки operation через пробел
 
-        if operation_split[0] or operation_split[1] == "+": # узнается, какую операцию хотел произвести пользователь
+        #вызов сложения
+        if operation_split[0] == "+" or operation_split[1] == "+": # узнается, какую операцию хотел произвести пользователь
             if operation_split[0] == "+":  # если пользователь ввел строку operation по формуле + numb_2 , то вызывается функция от имеющегося в памяти значения numb_1 (по умолчанию numb_1==0 ) и введенного numb_2
                 numb_1= addition (numb_1, int(operation_split[1]))
                 print(numb_1)
+
             else:
                 numb_1= addition (int(operation_split[0]), int(operation_split[2])) # иначе, вызывается функция от введенных numb_1 и numb_2
                 print(numb_1)
+
+
+        #вызов вычитания
+        elif operation_split[0] == "-" or operation_split[1] == "-":
+            if operation_split[0] == "-":
+                numb_1= subtraction (numb_1, int(operation_split[1]))
+                print(numb_1)
+
+            else:
+                numb_1= subtraction (int(operation_split[0]), int(operation_split[2]))
+                print(numb_1)
+
+
+
+call()
