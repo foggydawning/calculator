@@ -34,12 +34,12 @@ def change_sign (numb_1):
 def persent (numb_1):
     return (numb_1)/100
 
-#возведение в заданную степень
+# возведение в заданную степень
 def vozvedenie_n(numb_1, numb_2):
     result = numb_1 ** numb_2
     return result
 
-#в озведенние в квадрат
+# возведенние в квадрат
 def vozvedenie_2(numb_1):
     result = numb_1 ** 2
     return result
@@ -109,54 +109,75 @@ def call (numb_1=0.0):
         if len(operation_split)==1:
             operation_split.append("")
 
-        #вызов сложения
+        # вызов сложения
         if operation_split[0] == "+" or operation_split[1] == "+": # узнается, какую операцию хотел произвести пользователь
             if operation_split[0] == "+":  # если пользователь ввел строку operation по формуле + numb_2 , то вызывается функция от имеющегося в памяти значения numb_1 (по умолчанию numb_1==0 ) и введенного numb_2
                 numb_1= addition (numb_1, float(operation_split[1]))
             else:
                 numb_1= addition (float(operation_split[0]), float(operation_split[2])) # иначе, вызывается функция от введенных numb_1 и numb_2
 
-        #вызов вычитания
+        # вызов вычитания
         elif operation_split[0] == "-" or operation_split[1] == "-":
             if operation_split[0] == "-":
                 numb_1= subtraction (numb_1, float(operation_split[1]))
             else:
                 numb_1= subtraction (float(operation_split[0]), float(operation_split[2]))
 
-        #вызов вычитания
+        # вызов вычитания
         elif operation_split[0] == "-" or operation_split[1] == "-":
             if operation_split[0] == "-":
                 numb_1= subtraction (numb_1, float(operation_split[1]))
             else:
                 numb_1= subtraction (float(operation_split[0]), float(operation_split[2]))
 
-        #вызов умножения
+        # вызов умножения
         elif operation_split[0] == "*" or operation_split[1] == "*":
             if operation_split[0] == "*":
                 numb_1= multiplication (numb_1, float(operation_split[1]))
             else:
                 numb_1= multiplication (float(operation_split[0]), float(operation_split[2]))
 
-        #вызов деления
+        # вызов деления
         elif operation_split[0] == "/" or operation_split[1] == "/":
             if operation_split[0] == "/":
                 numb_1= division (numb_1, float(operation_split[1]))
             else:
                 numb_1= division (float(operation_split[0]), float(operation_split[2]))
 
-        #вызов факториала
+        # вызов факториала
         elif operation_split[0] == "!" or operation_split[1] == "!":
             if operation_split[0] == "!":
                 numb_1= float (factorial (numb_1))
             else:
                 numb_1= float (factorial (float(operation_split[0])))
 
-        #вызов процента
+        # вызов процента
         elif operation_split[0] == "%" or operation_split[1] == "%":
             if operation_split[0] == "%":
                 numb_1= float (persent (numb_1))
             else:
                 numb_1= float (persent (float(operation_split[0])))
+
+        # возведение в квадрат
+        elif operation_split[0] == "vozvedenie_2" or operation_split[1] == "vozvedenie_2":
+            if operation_split[0] == "vozvedenie_2":
+                numb_1= float (vozvedenie_2 (numb_1))
+            else:
+                numb_1= float (vozvedenie_2 (float(operation_split[0])))
+
+        # возведение в куб
+        elif operation_split[0] == "vozvedenie_3" or operation_split[1] == "vozvedenie_3":
+            if operation_split[0] == "vozvedenie_3":
+                numb_1= float (vozvedenie_3 (numb_1))
+            else:
+                numb_1= float (vozvedenie_3 (float(operation_split[0])))
+
+        # возведение в н степень
+        elif operation_split[0] == "vozvedenie_n" or operation_split[1] == "vozvedenie_n":
+            if operation_split[0] == "vozvedenie_n":
+                numb_1= float (vozvedenie_n (numb_1, float(operation_split[1])))
+            else:
+                numb_1= float (vozvedenie_n (float(operation_split[0]), float(operation_split[2]))
 
         numb_1=rounding (numb_1)
         print(numb_1)
