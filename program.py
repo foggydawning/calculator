@@ -90,7 +90,7 @@ def rounding (result):
         return int(result)
     return round(result, 10)
 
-# вызов шункции
+# вызов расчетных шункций
 def call (numb_1=0):
     while True:
                 # для выполнения бесконечного количества раз
