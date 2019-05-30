@@ -158,26 +158,33 @@ def call (numb_1=0.0):
             else:
                 numb_1= float (persent (float(operation_split[0])))
 
-        # возведение в квадрат
+        # вызов возведения в квадрат
         elif operation_split[0] == "vozvedenie_2" or operation_split[1] == "vozvedenie_2":
             if operation_split[0] == "vozvedenie_2":
                 numb_1= float (vozvedenie_2 (numb_1))
             else:
                 numb_1= float (vozvedenie_2 (float(operation_split[0])))
 
-        # возведение в куб
+        # вызов возведения в куб
         elif operation_split[0] == "vozvedenie_3" or operation_split[1] == "vozvedenie_3":
             if operation_split[0] == "vozvedenie_3":
                 numb_1= float (vozvedenie_3 (numb_1))
             else:
                 numb_1= float (vozvedenie_3 (float(operation_split[0])))
 
-        # возведение в н степень
+        # вызов возведения в н степень
         elif operation_split[0] == "vozvedenie_n" or operation_split[1] == "vozvedenie_n":
             if operation_split[0] == "vozvedenie_n":
                 numb_1= float (vozvedenie_n (numb_1, float(operation_split[1])))
             else:
-                numb_1= float (vozvedenie_n (float(operation_split[0]), float(operation_split[2]))
+                numb_1= float (vozvedenie_n (float(operation_split[0]), float(operation_split[2])))
+
+        # вызов синуса
+        elif operation_split[0] == "sin" or operation_split[1] == "sin":
+            if operation_split[0] == "sin":
+                numb_1= float (sin(numb_1))
+            else:
+                numb_1= float (sin(float(operation_split[0])))
 
         numb_1=rounding (numb_1)
         print(numb_1)
