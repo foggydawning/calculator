@@ -215,6 +215,20 @@ def call (numb_1=0.0):
             else:
                 numb_1= float (ctang(float(operation_split[0])))
 
+        # вызов квадратного корня
+        elif operation_split[0] == "sqrt" or operation_split[1] == "sqrt":
+            if operation_split[0] == "sqrt":
+                numb_1= float (sqrt (numb_1))
+            else:
+                numb_1= float (sqrt (float(operation_split[0])))
+
+        # вызов н корня
+        elif operation_split[0] == "sqrt_n" or operation_split[1] == "sqrt_n":
+            if operation_split[0] == "sqrt_n":
+                numb_1= float (sqrt_n (numb_1, float(operation_split[1])))
+            else:
+                numb_1= float (sqrt_n (float(operation_split[0]), float(operation_split[2])))
+
         numb_1=rounding (numb_1)
         print(numb_1)
 
