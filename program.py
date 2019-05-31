@@ -181,10 +181,39 @@ def call (numb_1=0.0):
 
         # вызов синуса
         elif operation_split[0] == "sin" or operation_split[1] == "sin":
-            if operation_split[0] == "sin":
+            if operation_split[0] == "sin" and operation_split[1]=="":
                 numb_1= float (sin(numb_1))
+            elif operation_split[0] == "sin" and operation_split[1]!="":
+                numb_1= float(sin(float(operation_split[1])))
             else:
                 numb_1= float (sin(float(operation_split[0])))
+
+        # вызов косинуса
+        elif operation_split[0] == "cos" or operation_split[1] == "cos":
+            if operation_split[0] == "cos" and operation_split[1]=="":
+                numb_1= float (cos(numb_1))
+            elif operation_split[0] == "cos" and operation_split[1]!="":
+                numb_1= float(cos(float(operation_split[1])))
+            else:
+                numb_1= float (cos(float(operation_split[0])))
+
+        # вызов тангенса
+        elif operation_split[0] == "tang" or operation_split[1] == "tang":
+            if operation_split[0] == "tang" and operation_split[1]=="":
+                numb_1= float (tang(numb_1))
+            elif operation_split[0] == "tang" and operation_split[1]!="":
+                numb_1= float(tang(float(operation_split[1])))
+            else:
+                numb_1= float (tang(float(operation_split[0])))
+
+        # вызов котангенса
+        elif operation_split[0] == "ctang" or operation_split[1] == "ctang":
+            if operation_split[0] == "ctang" and operation_split[1]=="":
+                numb_1= float (ctang(numb_1))
+            elif operation_split[0] == "ctang" and operation_split[1]!="":
+                numb_1= float(ctang(float(operation_split[1])))
+            else:
+                numb_1= float (ctang(float(operation_split[0])))
 
         numb_1=rounding (numb_1)
         print(numb_1)
